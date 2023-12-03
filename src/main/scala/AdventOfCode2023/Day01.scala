@@ -17,7 +17,6 @@ object Day01:
   def part2(input: String): Int =
     val lines = parser(input)
     val pattern: Regex = "(?=([0-9])|(one)|(two)|(three|(four)|(five)|(six)|(seven)|(eight)|(nine)))"r
-
     def calibrate(value: String) =
       val v = pattern.findAllMatchIn(value).toSeq
       val matches = v.map(_.subgroups.filterNot(_ == null).head)
